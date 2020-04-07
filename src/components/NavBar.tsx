@@ -10,28 +10,28 @@ export default function NavBar(props: NavBarProps) {
             <Container>
                 <Navbar bg='white' expand='lg' >
                     <Navbar.Brand href='' >
-                        <img src='/assets/used/logo.png' height='50%' alt='logo' />
+                        <img src='/rent-app/assets/used/logo.png' height='50%' alt='logo' />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls='basic-navbar-nav' />
                     <Navbar.Collapse id='basic-navbar-nav'>
                         <Nav className='ml-auto'>
                             <Nav.Item as={Link} to='/'>
-                                <img src='/assets/used/plus.png' alt='plus' />
+                                <img src='/rent-app/assets/used/plus.png' alt='plus' />
                             </Nav.Item>
                             <Nav.Item as={Link} to='/'>
-                                <img className={Styles.navIcon} src='/assets/used/comment.png' alt='plus' />
+                                <img className={Styles.navIcon} src='/rent-app/assets/used/comment.png' alt='plus' />
                             </Nav.Item>
                             <Nav.Item as={Link} to='/'>
-                                <img className={Styles.navIcon} src='/assets/used/star.png' alt='plus' />
+                                <img className={Styles.navIcon} src='/rent-app/assets/used/star.png' alt='plus' />
                             </Nav.Item>
                             <Nav.Item as={Link} to='/'>
-                                <img className={Styles.navIcon} src='/assets/used/bell.png' alt='plus' />
+                                <img className={Styles.navIcon} src='/rent-app/assets/used/bell.png' alt='plus' />
                             </Nav.Item>
 
                             <div className={Styles.divider}></div>
 
                             <Nav.Item as={Link} to='/'>
-                                <img style={{ height: '50px', width: '50px' }} src='/assets/used/person.png' alt='plus' />
+                                <img style={{ height: '50px', width: '50px' }} src='/rent-app/assets/used/person.png' alt='plus' />
                             </Nav.Item>
 
                         </Nav>

@@ -7,7 +7,7 @@ export default function DetailCard(props: any) {
         <div className={Styles.cardDetail}>
 
             <div className='row'>
-                <img height='200px' width='200px' src={`/assets/used/${props.img}`} alt='pic' />
+                <img height='200px' width='200px' src={`/rent-app/assets/used/${props.img}`} alt='pic' />
                 <div style={{ marginLeft: '20px', width: '60%' }}>
                     <h2 >{props.title}</h2>
                     <h5 style={{ color: 'grey' }}>bid now {Math.floor(Math.random() * 1000)} ,  bids</h5>
