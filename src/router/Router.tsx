@@ -5,7 +5,7 @@ import LandingPage from '../views/LandingPage';
 
 export default function AppRouterWrapper(props: any) {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={window.location.pathname || ''}>
             <Switch>
                 <Route path='/' exact component={LandingPage} />
 
