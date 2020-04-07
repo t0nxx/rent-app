@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "83df7c1b12009a8e9e876bb01f8386fa",
+    "revision": "79a0cba070e3a86b7f9c97a9d7518f98",
     "url": "/rent-app/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/rent-app/static/css/2.47e06e2e.chunk.css"
   },
   {
-    "revision": "fcd94a35f9ccd7ffad68",
+    "revision": "7436ec025b813a277f0c",
     "url": "/rent-app/static/css/main.c8034c6a.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/rent-app/static/js/2.cc5ee787.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "fcd94a35f9ccd7ffad68",
-    "url": "/rent-app/static/js/main.aa9d43e7.chunk.js"
+    "revision": "7436ec025b813a277f0c",
+    "url": "/rent-app/static/js/main.e327acd0.chunk.js"
   },
   {
     "revision": "99bec97928653e77f050",
