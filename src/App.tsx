@@ -1,25 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import AppRouterWrapper from './router/Router';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faStar, faLongArrowAltDown, faLongArrowAltUp, faGripVertical, faList } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faStar, faLongArrowAltDown, faLongArrowAltUp, faGripVertical, faList)
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppRouterWrapper>
+      <div className='App' />
+    </AppRouterWrapper>
   );
 }
 
