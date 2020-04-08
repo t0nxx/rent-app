@@ -69,10 +69,10 @@ export default function LandingPage(props: NavBarProps) {
                 <div className={Styles.flexWrapper}>
                     <div className={Styles.cardWrapper}>
 
-                        <DetailCard img='h4.jpg' title='House1' />
-                        <DetailCard img='h2.jpg' title='House2' />
-                        <DetailCard img='h3.jpg' title='House3' />
-                        <DetailCard img='h1.jpg' title='House4' />
+                        <DetailCard img='h4.jpg' title='House1' id='4' />
+                        <DetailCard img='h2.jpg' title='House2' id='2' />
+                        <DetailCard img='h3.jpg' title='House3' id='3' />
+                        <DetailCard img='h1.jpg' title='House4' id='1' />
 
                         <br />
                         <Pagination size='lg' style={{ marginLeft: '10%' }}>{items}</Pagination>

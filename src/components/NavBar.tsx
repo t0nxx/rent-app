@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Navbar, Nav, NavDropdown, Container, Form, InputGroup, FormControl, Button } from 'react-bootstrap';
+import { Navbar, Nav, Container, Form, FormControl, Button } from 'react-bootstrap';
 import { NavBarProps } from '../interfaces/NavBar.props';
 import { Link } from 'react-router-dom';
 import Styles from '../styles/navbar.module.css';
@@ -9,7 +9,7 @@ export default function NavBar(props: NavBarProps) {
         <>
             <Container>
                 <Navbar bg='white' expand='lg' >
-                    <Navbar.Brand href='' >
+                    <Navbar.Brand as={Link} to='/' >
                         <img src='/rent-app/assets/used/logo.png' height='50%' alt='logo' />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls='basic-navbar-nav' />
@@ -40,9 +40,9 @@ export default function NavBar(props: NavBarProps) {
             </Container>
             {/* secound nav bar  */}
             <Navbar className='bg-light justify-content-center '>
-                <Form inline>
+                <Form inline style={{width : '60%'}}>
                     <FormControl type='text' placeholder='keyword' className='col-5 mr-sm-2' />
-                    <FormControl type='text' placeholder='city' className='col-5 mr-sm-2' />
+                    <FormControl type='text' placeholder='city' className='col-4 mr-sm-2' />
                     <Button type='submit'>Search</Button>
                 </Form>
             </Navbar>

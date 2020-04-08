@@ -1,0 +1,72 @@
+
+p {
+    color: grey;
+}
+
+.flexWrapper {
+    display: flex;
+    /* justify-content: space-around; */
+}
+
+.cardDetail {
+    padding: 20px;
+    margin: 50px;
+    margin-right: 0px;
+    box-shadow: 3px 2px 20px rgba(0, 0, 0, 0.07);
+    border-radius: 5px;
+    background-color: #FFF;
+    flex: 2 0 0;
+
+}
+
+.sideDetails {
+    padding: 20px;
+    margin: 50px;
+    margin-left: 10px;
+    box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.07);
+    border-radius: 10px;
+    border-color: black;
+}
+
+.ads {
+    display: flex;
+    margin-top: 30px;
+    height: 250px;
+    background-color: #B7D5BB;
+    justify-content: center;
+    align-items: center;
+}
+
+.divider {
+    width: 100%;
+    height: 2px;
+    background-color: #F2F3F8;
+}
+.clockdiv {
+    font-family: sans-serif;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    padding-left: 30%;
+}
+.clockdiv>div {
+    padding: 4px;
+    background: #28a745;
+    margin-right: 3px;
+}
+.clockdiv div>span {
+    padding: 3px 6px;
+    background: #28a745;
+}
+.clockdiv>div, .clockdiv div>span {
+    border-radius: 3px;
+    display: inline-block;
+}
+.smalltext {
+    padding-top: 5px;
+    font-size: 9px;
+}
+.clockdiv div>span {
+    padding: 3px 6px;
+    background: #458354;
+}
