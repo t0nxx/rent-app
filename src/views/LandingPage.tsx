@@ -40,25 +40,26 @@ export default function LandingPage(props: NavBarProps) {
 
                 <div className={Styles.headingArea}>
                     <div className='row'>
-                        <div className='col-md-4 col-sm-4 col-xs-12'>
-                            <h4>Available </h4>
-                        </div>
-                        <div className='col-md-8 col-sm-8 col-xs-12'>
-                            <div className='d-flex justify-content-around'>
-                                <h5>Sort by</h5>
-                                <Badge pill variant='primary'>
+                        <div className='col-md-10 col-sm-10 col-xs-10'>
+                            <div className='row'>
+                                <h4>Available </h4>
+                                <h5 style={{ marginLeft: '50px' }}>Sort by</h5>
+                                
+                                <Badge pill variant='light' style={{ marginLeft: '20px' , backgroundColor : '#CDEFFF' }}>
                                     <span>Newer</span>
-                                    <FontAwesomeIcon icon='long-arrow-alt-up' style={{ marginLeft: '5px', color: 'yellow', height: '20px', width: '20px' }} />
-                                </Badge>
-                                <Badge pill variant='primary'>
-                                    <span>Older</span>
-                                    <FontAwesomeIcon icon='long-arrow-alt-down' style={{ marginLeft: '5px', color: 'yellow', height: '20px', width: '20px' }} />
+                                    <FontAwesomeIcon icon='long-arrow-alt-up' style={{ marginLeft: '5px', color: 'grey', height: '20px', width: '20px' }} />
                                 </Badge>
 
+                                <Badge pill variant='light' style={{ marginLeft: '20px' }}>
+                                    <span>Older</span>
+                                    <FontAwesomeIcon icon='long-arrow-alt-down' style={{ marginLeft: '5px', color: 'grey', height: '20px', width: '20px' }} />
+                                </Badge>
+                            </div>
+                        </div>
+                        <div className='col-md-2 col-sm-2 col-xs-2'>
+                            <div className='d-flex justify-content-around'>
                                 <FontAwesomeIcon icon='grip-vertical' style={{ marginLeft: '5px', color: 'grey', height: '30px', width: '30px' }} />
                                 <FontAwesomeIcon icon='list' style={{ marginLeft: '5px', color: 'grey', height: '30px', width: '30px' }} />
-
-
                             </div>
 
                         </div>

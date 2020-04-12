@@ -1,11 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect, FormEvent } from 'react';
 import NavBar from '../components/NavBar';
 import { Container, Badge, Button, Table, FormControl, Form } from 'react-bootstrap';
 import Styles from '../styles/singleitempage.module.css';
 import { useParams } from 'react-router-dom';
 
 export default function SingleItemPage(props) {
-    const { picId } = useParams()
+    const { picId } = useParams();
+    const users = [
+        { name: 'Ahmed', price: 2000 },
+        { name: 'Toni', price: 1000 },
+        { name: 'Hesham', price: 7000 },
+        { name: 'You', price: 0 },
+    ];
+    const [biders, setBidders] = useState(users);
+    const [mybid, setMyBid] = useState(0);
+    const [secCounter, setSecCounter] = useState(60);
+    const [minCounter, setMinCounter] = useState(40);
+
+    const handelSubmit = (e) => {
+        e.preventDefault();
+        users[users.findIndex(e => e.name === 'You')].price = mybid;
+        setBidders(users.sort((a, b) => b.price - a.price));
+    };
+
+    useEffect(() => {
+        if (secCounter > 0) {
+            setTimeout(() => setSecCounter(secCounter - 1), 1000);
+        } else {
+            setSecCounter(60); setMinCounter(minCounter - 1);
+        }
+    }, [secCounter, minCounter])
+
     return (
         <>
             <NavBar title='landing page' />
@@ -75,24 +100,24 @@ export default function SingleItemPage(props) {
                             <div className={Styles.clockdiv}>
                                 <p>Dead Time</p>
                                 <div>
-                                    <span className={Styles.minutes}>58</span>
+                                    <span className={Styles.minutes}>{minCounter}</span>
                                     <div className={Styles.smalltext}>Min</div>
                                 </div>
                                 <div>
-                                    <span className={Styles.seconds}>35</span>
+                                    <span className={Styles.seconds}>{secCounter}</span>
                                     <div className={Styles.smalltext}>sec</div>
                                 </div>
                             </div>
                             <Table responsive borderless>
                                 <tbody>
-                                    <tr><td>Ahmed</td><td><span style={{ color: 'blue' }}>2000$</span></td></tr>
-                                    <tr><td>Toni</td><td><span style={{ color: 'blue' }}>1000$</span></td></tr>
-                                    <tr><td>Test</td><td><span style={{ color: 'blue' }}>500$</span></td></tr>
+                                    {biders.map(person =>
+                                        <tr key={person.name}><td>{person.name}</td><td><span style={{ color: 'blue' }}>{person.price}$</span></td></tr>
+                                    )}
 
                                 </tbody>
                             </Table>
-                            <Form inline style={{ width: '100%' }}>
-                                <FormControl type='text' placeholder='Plase Your Bid Now' className='col-8 mr-sm-2' />
+                            <Form inline style={{ width: '100%' }} onSubmit={handelSubmit}>
+                                <FormControl type='number' onChange={e => setMyBid(e.target.value)} placeholder='Place Your Bid Now' className='col-8 mr-sm-2' />
                                 <Button variant="success" type='submit'>Bid</Button>
                             </Form>
                         </div>
@@ -110,14 +135,11 @@ export default function SingleItemPage(props) {
                             </div>
 
                             <div className="row bg-light mt-4">
-                                <img style={{ height: '30px', width: '30px', marginLeft: '10px', paddingTop : '2px', paddingBottom : '2px'  }} src={`/rent-app/assets/used/report.png`} alt='pic' />
+                                <img style={{ height: '30px', width: '30px', marginLeft: '10px', paddingTop: '2px', paddingBottom: '2px' }} src={`/rent-app/assets/used/report.png`} alt='pic' />
 
                                 <h6 style={{ color: 'grey', margin: '10px', marginTop: '5px' }}>Report this ad</h6>
                             </div>
                         </div>
-                        {/* <div className={Styles.ads}>
-                            <h5>Advertisments</h5>
-                        </div> */}
                     </div>
                 </div>
 
