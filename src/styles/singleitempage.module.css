@@ -70,3 +70,22 @@ p {
     padding: 3px 6px;
     background: #458354;
 }
+
+.progressBarWrapper {
+    width: 100%;
+    margin: 10px auto;
+    height: 30px;
+    background-color: #E3E7EE;
+    border-radius: 10px;
+    
+  }
+  
+.progressBar {
+    height: 100%;
+    text-align: right;
+    padding: 0 10px;
+    line-height: 30px; /* same as #progressBar height if we want text middle aligned */
+    width: 20px;
+    background-color: #00EC00;
+    box-sizing: border-box;
+  }

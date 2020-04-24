@@ -1,8 +1,9 @@
-import React, { useState, useEffect, FormEvent } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import NavBar from '../components/NavBar';
 import { Container, Badge, Button, Table, FormControl, Form } from 'react-bootstrap';
 import Styles from '../styles/singleitempage.module.css';
 import { useParams } from 'react-router-dom';
+import $ from 'jquery';
 
 export default function SingleItemPage(props) {
     const { picId } = useParams();
@@ -16,6 +17,7 @@ export default function SingleItemPage(props) {
     const [mybid, setMyBid] = useState(0);
     const [secCounter, setSecCounter] = useState(60);
     const [minCounter, setMinCounter] = useState(40);
+    const [isSold, setIsSold] = useState(false);
 
     const handelSubmit = (e) => {
         e.preventDefault();
@@ -23,13 +25,34 @@ export default function SingleItemPage(props) {
         setBidders(users.sort((a, b) => b.price - a.price));
     };
 
-    useEffect(() => {
-        if (secCounter > 0) {
-            setTimeout(() => setSecCounter(secCounter - 1), 1000);
+    const progress = (timeleft, timetotal, $element) => {
+        console.log($element);
+        let progressBarWidth = timeleft * $element.width() / timetotal;
+        $element.find('div').animate({ width: progressBarWidth }, 500)
+        if (timeleft > 0) {
+            setTimeout(function () {
+                progress(timeleft - 1, timetotal, $element);
+                //setSecCounter(timeleft - 1);
+            }, 1000);
         } else {
-            setSecCounter(60); setMinCounter(minCounter - 1);
+            setIsSold(true);
         }
-    }, [secCounter, minCounter])
+    };
+
+
+
+    // useEffect(() => {
+    //     if (secCounter > 0) {
+    //         setTimeout(() => setSecCounter(secCounter - 1), 1000);
+    //     } else {
+    //         setSecCounter(60); setMinCounter(minCounter - 1);
+    //     }
+
+    // }, [secCounter, minCounter])
+    useEffect(() => {
+        progress(15, 15, $('#progressBarWrapper'));
+
+    }, [])
 
     return (
         <>
@@ -97,16 +120,19 @@ export default function SingleItemPage(props) {
                         </div>
                         <div className={Styles.sideDetails}>
                             <h4 style={{ color: 'grey' }}>Bids</h4>
-                            <div className={Styles.clockdiv}>
+                            <div >
                                 <p>Dead Time</p>
-                                <div>
+                                <div id="progressBarWrapper" className={Styles.progressBarWrapper}>
+                                    <div className={Styles.progressBar}></div>
+                                </div>
+                                {/* <div>
                                     <span className={Styles.minutes}>{minCounter}</span>
                                     <div className={Styles.smalltext}>Min</div>
                                 </div>
                                 <div>
                                     <span className={Styles.seconds}>{secCounter}</span>
                                     <div className={Styles.smalltext}>sec</div>
-                                </div>
+                                </div> */}
                             </div>
                             <Table responsive borderless>
                                 <tbody>
@@ -116,10 +142,12 @@ export default function SingleItemPage(props) {
 
                                 </tbody>
                             </Table>
-                            <Form inline style={{ width: '100%' }} onSubmit={handelSubmit}>
+                            <h1 hidden={!isSold} style={{ color: 'red', fontWeight: 'bolder' }}>Sold Out , Thanks </h1>
+                            <Form hidden={isSold} inline style={{ width: '100%' }} onSubmit={handelSubmit}>
                                 <FormControl type='number' onChange={e => setMyBid(e.target.value)} placeholder='Place Your Bid Now' className='col-8 mr-sm-2' />
                                 <Button variant="success" type='submit'>Bid</Button>
                             </Form>
+                            
                         </div>
 
                         <div className={Styles.sideDetails}>

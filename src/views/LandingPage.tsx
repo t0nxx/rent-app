@@ -44,9 +44,10 @@ export default function LandingPage(props: NavBarProps) {
                             <div className='row'>
                                 <h4>Available </h4>
                                 <h5 style={{ marginLeft: '50px' }}>Sort by</h5>
-                                
-                                <Badge pill variant='light' style={{ marginLeft: '20px' , backgroundColor : '#CDEFFF' }}>
+
+                                <Badge pill variant='light' style={{ marginLeft: '20px', backgroundColor: '#CDEFFF' }}>
                                     <span>Newer</span>
+                                    {/* tslint:disable-next-line: max-line-length */}
                                     <FontAwesomeIcon icon='long-arrow-alt-up' style={{ marginLeft: '5px', color: 'grey', height: '20px', width: '20px' }} />
                                 </Badge>
 
